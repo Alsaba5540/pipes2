@@ -1,0 +1,83 @@
+<h1 class="bg-primary text-center mt-4">upper,lower,titlecase number,currency ,date , summary Pipes</h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 mt-4">
+      <p>
+        {{ secondTitle | summary : 100}}
+        <!-- {{title | summary}} -->
+      </p>
+      <p>
+        {{ secondTitle | summary : 106}}
+        <!-- {{title | summary}} -->
+      </p>
+      <p>
+        {{ secondTitle | summary }}
+        <!-- {{title | summary}} -->
+      </p>
+    </div>
+
+    <div class="col-sm-12 mt-4">
+      <p class="alert alert-info">
+
+        {{title | uppercase}}
+      </p>
+      <p class="alert alert-info">
+
+        {{title | lowercase}}
+      </p>
+      <p class="alert alert-info">
+
+        {{title | titlecase}}
+      </p>
+      <p>
+        {{d}}
+      </p>
+      <p>
+        {{d | date}}
+      </p>
+      <p>
+        {{d | date : 'short'}}
+      </p>
+      <p>
+        {{d | date : 'mediumTime'}}
+      </p>
+
+    </div>
+    <div class="col-sm-4">
+      <div class="card">
+        <div class="card-header">
+          Course Title: {{course.courseName}}
+        </div>
+        <div class="card-body">
+          <p>
+            Count Of Std : {{ course.noOfStd | number }}
+
+          </p>
+          <p>
+            Rating of Std : {{course.rating | number : '2.0-2'}}
+
+          </p>
+          <p>
+            ReleaseDate: {{course.releaseDate | date}}
+          </p>
+          <p>
+            Price : {{course.price| currency }}
+            Price : {{course.price| currency:'EUR' }}
+            Price : {{course.price| currency : 'AUD' }}
+            Price : {{course.price| currency : 'INR'}}
+
+          </p>
+
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12 mt-4">
+      <p>
+        {{thirdTitle | summary : 200}}
+      </p>
+    </div>
+
+  </div>
+</div>
+
